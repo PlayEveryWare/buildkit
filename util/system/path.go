@@ -16,7 +16,7 @@ const DefaultPathEnvUnix = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/s
 // DefaultPathEnvWindows is windows style list of directories to search for
 // executables. Each directory is separated from the next by a colon
 // ';' character .
-const DefaultPathEnvWindows = "c:\\Windows\\System32;c:\\Windows"
+const DefaultPathEnvWindows = ""
 
 func DefaultPathEnv(os string) string {
 	if os == "windows" {
