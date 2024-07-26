@@ -627,7 +627,9 @@ func toDispatchState(ctx context.Context, dt []byte, opt ConvertOpt) (*dispatchS
 			if d.platform != nil {
 				osName = d.platform.OS
 			}
-			d.image.Config.Env = append(d.image.Config.Env, "PATH="+system.DefaultPathEnv(osName))
+			if p := system.DefaultPathEnv(osName); p != "" {
+				d.image.Config.Env = append(d.image.Config.Env, "PATH="+p)
+			}
 		}
 
 		// initialize base metadata from image conf
